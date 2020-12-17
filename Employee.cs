@@ -11,6 +11,8 @@ namespace CA2
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        
+
 
         public abstract void CalculateMonthlyPay(decimal monthlyPay);                      
     }
@@ -23,7 +25,8 @@ namespace CA2
         {
             FirstName = firstName;
             LastName = lastName;
-            Salary = salary;        
+            Salary = salary;
+         
         }
 
         public decimal Salary { get; set; }
@@ -41,12 +44,29 @@ namespace CA2
 
     public abstract class PartTimeEmployee : Employee
     {
+        public decimal MonthlyPay { get; set; }
+        public PartTimeEmployee(string firstName, string lastName, decimal hourlyRate, decimal hoursWorked)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            HourlyRate = hourlyRate;
+            HoursWorked = hoursWorked;
+
+        }
         public decimal HourlyRate { get; set; }
-        public double HoursWorked { get; set; }
+        public decimal HoursWorked { get; set; }
 
         public void CalculateMonthlyPay(decimal hoursWorked, decimal hourlyRate)
         {
-            HourlyRate = (hourlyRate*hoursWorked);
+            MonthlyPay = (hourlyRate*hoursWorked);
+            
+            
         }
+
+        public override string ToString()
+        {
+            return string.Format($"{LastName}, {FirstName} - MonthlyPay {MonthlyPay}");
+        }
+
     }
 }

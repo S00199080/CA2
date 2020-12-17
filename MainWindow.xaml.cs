@@ -21,8 +21,9 @@ namespace CA2
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<FullTimeEmployee> fullTimeEmployees = new ObservableCollection<FullTimeEmployee>();
-        ObservableCollection<PartTimeEmployee> partTimeEmployees = new ObservableCollection<PartTimeEmployee>();
+        ObservableCollection<Employee> fullTimeEmployees = new ObservableCollection<Employee>();
+        ObservableCollection<Employee> partTimeEmployees = new ObservableCollection<Employee>();
+
 
         public MainWindow()
         {
@@ -31,11 +32,7 @@ namespace CA2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            FullTimeEmployee e1 = new FullTimeEmployee("John", "Munnely", 12000);
-
-            fullTimeEmployees.Add(e1);
-
-            lbxNames.Items.Add(fullTimeEmployees);
+           
 
         }
 
@@ -49,18 +46,24 @@ namespace CA2
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //read details from screen
-            string firstName = tbxFirstName.Text;
-            string lastName = tbxSurname.Text;
-            decimal salary = Convert.ToInt32(tbxSalary.Text);
-            //create student object
-            FullTimeEmployee e1 = new FullTimeEmployee(firstName, lastName, salary);
+           
+
+                string firstName = tbxFirstName.Text;
+                string lastName = tbxSurname.Text;
+                decimal salary = Convert.ToInt32(tbxSalary.Text);
+
+                //create student object
 
 
-            //add to observable collection
-            fullTimeEmployees.Add(e1);
 
-            lbxNames.Items.Add(e1);
+                FullTimeEmployee e1 = new FullTimeEmployee(firstName, lastName, salary);
+
+
+                //add to observable collection
+                fullTimeEmployees.Add(e1);
+
+                lbxNames.Items.Add(e1);
+            
             //refresh display manually
             //lbxNames.ItemsSource = null;
             //lbxNames.ItemsSource = names;
@@ -87,6 +90,8 @@ namespace CA2
         {
 
         }
+
+        
     }
 
     
