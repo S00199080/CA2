@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lbxNames" HorizontalAlignment="Left" Height="277" Margin="82,87,0,0" VerticalAlignment="Top" Width="156" SelectionChanged="lbxNames_SelectionChanged"/>
+        <ListBox x:Name="lbxNames" HorizontalAlignment="Left" Height="277" Margin="82,87,0,0" VerticalAlignment="Top" Width="156" SelectionChanged="lbxNames_SelectionChanged" IsSynchronizedWithCurrentItem="False"/>
         <TextBlock x:Name="txtblck1" HorizontalAlignment="Left" Margin="82,66,0,0" TextWrapping="Wrap" Text="Employee" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cBoxFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="82,46,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cBoxFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="82,46,0,0" VerticalAlignment="Top" Checked="cBoxFullTime_Checked"/>
         <CheckBox x:Name="cBoxPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="168,46,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtblck2" HorizontalAlignment="Left" Margin="405,101,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtblck3" HorizontalAlignment="Left" Margin="405,148,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top"/>

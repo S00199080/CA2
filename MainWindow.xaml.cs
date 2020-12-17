@@ -35,7 +35,7 @@ namespace CA2
 
             fullTimeEmployees.Add(e1);
 
-            lbxNames.ItemsSource = fullTimeEmployees;
+            lbxNames.Items.Add(fullTimeEmployees);
 
         }
 
@@ -60,7 +60,7 @@ namespace CA2
             //add to observable collection
             fullTimeEmployees.Add(e1);
 
-
+            lbxNames.Items.Add(e1);
             //refresh display manually
             //lbxNames.ItemsSource = null;
             //lbxNames.ItemsSource = names;
@@ -83,9 +83,10 @@ namespace CA2
           
         }
 
-        
+        private void cBoxFullTime_Checked(object sender, RoutedEventArgs e)
+        {
 
-
+        }
     }
 
     
