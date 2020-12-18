@@ -57,25 +57,20 @@ namespace CA2
 
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-           
-
+        {        
                 string firstName = tbxFirstName.Text;
                 string lastName = tbxSurname.Text.ToUpper();   //ToUpper() converts a user input string into capital letters
                 decimal salary = Convert.ToInt32(tbxSalary.Text);
 
-               
 
-
-
-                FullTimeEmployee e3 = new FullTimeEmployee(firstName, lastName, salary);
+                FullTimeEmployee e1 = new FullTimeEmployee(firstName, lastName, salary);
 
 
                 //adds to observable collection
-                fullTimeEmployees.Add(e3);
+                fullTimeEmployees.Add(e1);
 
                 //Add to listbox
-                lbxNames.Items.Add(e3);
+                lbxNames.ItemsSource=fullTimeEmployees;
             
             
 
@@ -118,7 +113,10 @@ namespace CA2
             lbxNames.Items.Clear();
         }
 
-        
+        private void rbFullTimeNew_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     
