@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CA2
-{
+{    //This is the Employee Class
     public abstract class Employee
     {
         public string FirstName { get; set; }
@@ -17,7 +17,7 @@ namespace CA2
         public abstract void CalculateMonthlyPay(decimal monthlyPay);                      
     }
 
-
+    //FullTimeEmployee inherits from Employee
     public class FullTimeEmployee : Employee
     {
         
@@ -31,6 +31,7 @@ namespace CA2
 
         public decimal Salary { get; set; }
 
+        //Override method
         public override void CalculateMonthlyPay(decimal salary)
         {
             Salary = salary * 12;
@@ -42,6 +43,7 @@ namespace CA2
         }
     }
 
+    //PartTimeEmployee inherits from Employee
     public abstract class PartTimeEmployee : Employee
     {
         public decimal MonthlyPay { get; set; }

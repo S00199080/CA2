@@ -21,6 +21,7 @@ namespace CA2
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Observable collections for fulltimeemployees and parttimeemployees
         ObservableCollection<Employee> fullTimeEmployees = new ObservableCollection<Employee>();
         ObservableCollection<Employee> partTimeEmployees = new ObservableCollection<Employee>();
 
@@ -49,24 +50,23 @@ namespace CA2
            
 
                 string firstName = tbxFirstName.Text;
-                string lastName = tbxSurname.Text;
+                string lastName = tbxSurname.Text.ToUpper();   //ToUpper() converts a user input string into capital letters
                 decimal salary = Convert.ToInt32(tbxSalary.Text);
 
-                //create student object
+               
 
 
 
                 FullTimeEmployee e1 = new FullTimeEmployee(firstName, lastName, salary);
 
 
-                //add to observable collection
+                //adds to observable collection
                 fullTimeEmployees.Add(e1);
 
+                //Add to listbox
                 lbxNames.Items.Add(e1);
             
-            //refresh display manually
-            //lbxNames.ItemsSource = null;
-            //lbxNames.ItemsSource = names;
+            
 
         }
 
@@ -76,9 +76,9 @@ namespace CA2
 
             if (selectedWorker != null)
             {
-                //take action - update the display
+                //update the display
                 tbxFirstName.Text = selectedWorker.FirstName;
-                tbxSurname.Text = selectedWorker.LastName;
+                tbxSurname.Text = selectedWorker.LastName.ToUpper();
                 tbxSalary.Text = selectedWorker.Salary.ToString();
                 
             }
@@ -91,7 +91,21 @@ namespace CA2
 
         }
 
-        
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Clears all Names from the listbox
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            lbxNames.Items.Clear();
+        }
     }
 
     
