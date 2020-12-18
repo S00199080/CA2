@@ -31,17 +31,28 @@ namespace CA2
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-           
+            FullTimeEmployee e1 = new FullTimeEmployee("John", "Munnelly", 15000);
+            FullTimeEmployee e2 = new FullTimeEmployee("Robert", "Butler", 22250);
+            PartTimeEmployee e3 = new PartTimeEmployee("Lenny", "Mcgourthy", 2000, 1000);
+            PartTimeEmployee e4 = new PartTimeEmployee("Brian", "Hagan", 2000, 1200);
 
+            //adds to observable collection
+            fullTimeEmployees.Add(e1);
+            fullTimeEmployees.Add(e2);
+
+            //Add to Listbox
+            lbxNames.ItemsSource = fullTimeEmployees;
+
+            //adds to observable collection
+            partTimeEmployees.Add(e3);
+            partTimeEmployees.Add(e4);
+
+            //Add to listbox
+            lbxNames.ItemsSource = partTimeEmployees;
         }
 
-
-        private void tbxNewName_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbxFirstName.Clear();
-        }
 
 
 
@@ -57,14 +68,14 @@ namespace CA2
 
 
 
-                FullTimeEmployee e1 = new FullTimeEmployee(firstName, lastName, salary);
+                FullTimeEmployee e3 = new FullTimeEmployee(firstName, lastName, salary);
 
 
                 //adds to observable collection
-                fullTimeEmployees.Add(e1);
+                fullTimeEmployees.Add(e3);
 
                 //Add to listbox
-                lbxNames.Items.Add(e1);
+                lbxNames.Items.Add(e3);
             
             
 
@@ -106,6 +117,8 @@ namespace CA2
         {
             lbxNames.Items.Clear();
         }
+
+        
     }
 
     

@@ -44,7 +44,7 @@ namespace CA2
     }
 
     //PartTimeEmployee inherits from Employee
-    public abstract class PartTimeEmployee : Employee
+    public class PartTimeEmployee : Employee
     {
         public decimal MonthlyPay { get; set; }
         public PartTimeEmployee(string firstName, string lastName, decimal hourlyRate, decimal hoursWorked)
@@ -54,15 +54,15 @@ namespace CA2
             HourlyRate = hourlyRate;
             HoursWorked = hoursWorked;
 
+            MonthlyPay = (hourlyRate * hoursWorked);
+
         }
         public decimal HourlyRate { get; set; }
         public decimal HoursWorked { get; set; }
 
-        public void CalculateMonthlyPay(decimal hoursWorked, decimal hourlyRate)
+        public override void CalculateMonthlyPay(decimal monthlyPay)
         {
-            MonthlyPay = (hourlyRate*hoursWorked);
-            
-            
+            MonthlyPay = monthlyPay;
         }
 
         public override string ToString()
